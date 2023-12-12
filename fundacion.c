@@ -63,7 +63,7 @@ int main()
     do // usamos esta funcion para presentar un menu de opciones y solicitar al usuario que seleccione una opcion
     {
 
-        printf("\nSeleccione una opción:\n"); // Menú de opciones
+        printf("\nSeleccione una opcion:\n"); // Menú de opciones
         printf("1. Imprimir Detalle de Ingresos y Egresos\n");
         printf("2. Imprimir Total de Ingresos y Egresos Anual\n");
         printf("3. Salir\n");
@@ -78,7 +78,8 @@ int main()
             ImprimirTotalIngresosEgresosAnual(registros); // llama a la función para imprimir el total de ingresos y egresos en todo el año por cada insumo
             break;
         case 3:
-            printf("Saliendo del programa...\n"); // la ultima opcion ponemos para que el usuario pueda salir del programa y no se genere un bucle infinito
+            printf("Saliendo del programa...\n");
+            printf("gracias por usar el programa :) \n"); // la ultima opcion ponemos para que el usuario pueda salir del programa y no se genere un bucle infinito
             break;
         default:
             printf("Opción no válida. Intente nuevamente.\n"); // ponemos esta condicion para que el usuario no ingrese otro valor y no se dañe el programa
