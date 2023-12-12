@@ -20,3 +20,25 @@ void GenerarValoresAleatorios(struct RegistroMes registros[][NUM_MESES]) { // cr
         }
     }
 }
+
+void ImprimirDetalleInsumosMes(struct RegistroMes registros[][NUM_MESES]) { // creamos la funcion con void para que no de valor de retorno la misma que usaremos para inprimir los detalles de insumo por mes
+    for (int i = 0; i < NUM_INSUMOS; i++) { // primer for para la columna de insumos
+        printf("Insumo %d:\n", i + 1); // imprimimos el encabezado indicando el número del insumo
+        for (int j = 0; j < NUM_MESES; j++) { // segundo for sobre cada mes para un insumo dado
+            printf("Mes %d - Ingresos: %d, Egresos: %d\n", j + 1, registros[i][j].ingresos, registros[i][j].egresos); // imprimimos el detalle de ingresos y egresos para el mes actual del insumo actual, Se utiliza j + 1 para mostrar el número del mes comenzando desde 1 en lugar de 0, registros[i][j].ingresos y registros[i][j].egresos acceden a los valores almacenados en la matriz de registros
+        }
+        printf("\n"); // utilizamos esto para que la siguiente linea se inprima con espacio
+    }
+}
+
+void ImprimirTotalIngresosEgresosAnual(struct RegistroMes registros[][NUM_MESES]) { // creamos la funcion con void para que no de valor de retorno la misma que usaremos para inprimir el total de ingresos y egresos anuales
+    for (int i = 0; i < NUM_INSUMOS; i++) { // primer for para la columna de insumos
+        int totalIngresos = 0;// igualamos a cero los ingresos y egresos para que el conteo sea correcto
+        int totalEgresos = 0;
+        for (int j = 0; j < NUM_MESES; j++) { // segundo for sobre cada mes para un insumo dado
+            totalIngresos += registros[i][j].ingresos; // acumula los valores para obtener el total
+            totalEgresos += registros[i][j].egresos;
+        }
+        printf("Insumo %d - Total Ingresos: %d, Total Egresos: %d\n", i + 1, totalIngresos, totalEgresos); // imprimimos el total de ingresos y egresos para el insumo actual
+    }
+}
