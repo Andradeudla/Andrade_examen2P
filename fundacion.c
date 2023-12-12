@@ -42,3 +42,20 @@ void ImprimirTotalIngresosEgresosAnual(struct RegistroMes registros[][NUM_MESES]
         printf("Insumo %d - Total Ingresos: %d, Total Egresos: %d\n", i + 1, totalIngresos, totalEgresos); // imprimimos el total de ingresos y egresos para el insumo actual
     }
 }
+int main() { // declaramos la funcion principal
+    
+    struct RegistroMes registros[NUM_INSUMOS][NUM_MESES];// Declaración de la matriz de registros
+
+    GenerarValoresAleatorios(registros); // llamamos a la función para llenar la matriz registros con valores aleatorios para ingresos y egresos
+
+    int opcion; // creamos el menu para el usuario usando opcion para almacenar la eleccion del usuario.
+
+    do {
+        // Menú de opciones
+        printf("\nSeleccione una opción:\n");
+        printf("1. Imprimir Detalle de Ingresos y Egresos\n");
+        printf("2. Imprimir Total de Ingresos y Egresos Anual\n");
+        printf("3. Salir\n");
+        scanf("%d", &opcion);
+
+    }
