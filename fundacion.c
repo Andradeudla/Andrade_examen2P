@@ -10,3 +10,13 @@ struct RegistroMes { // definición de estructura para almacenar los registros d
     int ingresos;
     int egresos;
 };
+
+void GenerarValoresAleatorios(struct RegistroMes registros[][NUM_MESES]) { // creamos la funcion con void para que no de valor de retorno
+    srand(time(NULL)); // establecemos la semilla para la generación de números aleatorios basada en el tiempo actual
+    for (int i = 0; i < NUM_INSUMOS; i++) { // creamos el primer for para la columna de insumos
+        for (int j = 0; j < NUM_MESES; j++) { // creamos el segundo for para la columa de meses
+            registros[i][j].ingresos = rand() % 100 + 1; // Genera números aleatorios entre 1 y 100 para ingresos
+            registros[i][j].egresos = rand() % 50 + 1;  // Genera números aleatorios entre 1 y 50 para egresos
+        }
+    }
+}
